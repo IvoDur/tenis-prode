@@ -35,5 +35,5 @@ async def update_user(id: str, user: User):
 
 
 @user_router.delete("/{id}")
-async def delete_user(id: str, user: User):
+async def delete_user(id: str):
     return userEntity(users_collection.find_one_and_delete({"_id": ObjectId(id)}))
