@@ -11,3 +11,5 @@ client = MongoClient(uri, tlsCAFile=certifi.where())
 db = client.prode
 
 users_collection = db["users"]
+official_matches_collection = db["official_matches"]
+custom_matches_collection = db["custom_matches"]
