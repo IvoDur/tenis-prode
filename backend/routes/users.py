@@ -18,9 +18,9 @@ async def add_user(user: User):
     return str(users_collection.insert_one(dict(user)).inserted_id)
 
 
-@user_router.get("/{id}")
-async def find_user(id: str):
-    return userEntity(users_collection.find_one({"_id": ObjectId(id)}))
+@user_router.get("/{username}")
+async def find_user(username: str):
+    return userEntity(users_collection.find_one({"username": username}))
 
 
 @user_router.put("/{id}")
